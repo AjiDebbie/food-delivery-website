@@ -1,0 +1,44 @@
+
+{% extends 'customer/header.html' %}
+{% block content %}
+
+
+
+<!-- <p>Items:</p> -->
+
+
+
+
+{%if messages%}
+{%for message in messages %}
+<div style="color:blue; font-size:25px;" >{{message}}</div>
+{%endfor%}
+{%endif%}
+
+<section class="checkout">
+  
+
+  <h1>Order Summary</h1>
+    <h2>Order #{{ order.id }}</h2>
+    <h3>Items:</h3>
+    <ul>
+        {% for item in order.items.all %}
+            <li>{{ item.product.name }} - Quantity: {{ item.quantity }} - Price: ${{ item.product.price }}</li>
+        {% endfor %}
+    </ul>
+    <p>Delivery Fee: ${{ order.deliveryfee }}</p>
+    <p>Total: ${{ total }}</p>
+    <p>Ordered Date: {{ order.ordered_date }}</p>
+    <p>Payment Method: {{ order.payment_method }}</p>
+    <p>Shipping Address: {{ order.shipping_address }}</p>
+    <p>Contact Email: {{ order.email }}</p>
+    <p>Contact Telephone: {{ order.telephone }}</p>
+</section>
+
+
+
+
+
+{% endblock %}
+
+

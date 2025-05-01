@@ -1,0 +1,343 @@
+{% extends 'customer/base.html' %}
+{% block content %}
+
+<section class="hero" id="menu">
+
+    <div class="content">
+        
+        <h3><span>{{title}}</span></h3>
+        
+    </div>
+
+</section>
+
+<style>
+   .product-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    border-radius: .5rem;
+    background: #f7f7f7;
+    padding: 2rem;
+    text-align: center;
+}
+
+.product-details .image {
+    flex: 0 0 100%;
+    max-width: 400px;
+    margin-bottom: 20px;
+}
+
+.product-details .image img {
+    width: 100%;
+    height: auto;
+    border-radius: .5rem;
+}
+
+.product-details .content {
+    flex: 0 0 100%;
+}
+
+.product-details h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.product-details .description {
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.product-details .price {
+    font-size: 2rem;
+    color: #130f40;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.product-details .rating {
+    margin-bottom: 10px;
+    color: #666;
+}
+
+.product-details .rating span {
+    font-weight: bold;
+    color: #666;
+}
+
+.product-details .stars {
+    color: gold;
+}
+
+.product-details .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #27ae60;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.product-details .btn:hover {
+    background-color: #219653;
+}
+
+@media screen and (min-width: 768px) {
+    .product-details {
+        flex-direction: row;
+        text-align: left;
+    }
+
+    .product-details .image {
+        flex: 0 0 400px;
+        margin-right: 40px;
+        margin-bottom: 0;
+    }
+
+    .product-details .content {
+        flex: 1;
+    }
+}
+
+
+
+
+
+body {
+	display: grid;
+	grid-template-rows: 1fr;
+	font-family: "Raleway", sans-serif;
+	background-color: #e6fff1;
+}
+
+h3 {
+	font-size: 0.7em;
+	letter-spacing: 1.2px;
+
+}
+
+img {
+			max-width: 100%;
+			
+		}
+
+/* ----- Product Section ----- */
+.product {
+	display: grid;
+	grid-template-columns: 0.9fr 1fr;
+	margin: auto;
+	padding: 2.5em 0;
+	min-width: 600px;
+	background-color: white;
+	border-radius: 5px;
+}
+
+/* ----- Photo Section ----- */
+.product__photo {
+	position: relative;
+}
+
+.photo-container {
+	position: absolute;
+	left: -2.5em;
+	display: grid;
+	grid-template-rows: 1fr;
+	width: 100%;
+	height: 100%;
+	border-radius: 6px;
+	box-shadow: 4px 4px 25px -2px rgba(0, 0, 0, 0.3);
+}
+
+.photo-main {
+	border-radius: 6px 6px 0 0;
+	background-color: #9be010;
+	background: radial-gradient(#e5f89e, #96e001);
+
+	.controls {
+		display: flex;
+		justify-content: space-between;
+		padding: 0.8em;
+		color: #fff;
+
+		i {
+			cursor: pointer;
+		}
+	}
+
+	img {
+		position: absolute;
+		left: -3.5em;
+		top: 2em;
+		max-width: 110%;
+		filter: saturate(150%) contrast(120%) hue-rotate(10deg)
+			drop-shadow(1px 20px 10px rgba(0, 0, 0, 0.3));
+	}
+}
+
+.photo-album {
+	padding: 0.7em 1em;
+	border-radius: 6px;
+	background-color: #fff;
+
+	
+}
+
+/* ----- Informations Section ----- */
+.product__info {
+	padding: 0.8em 0;
+}
+
+.title {
+	h1{
+		margin-bottom: 0.1em;
+		
+		font-size: 1.5em;
+		font-weight: 900;
+	}
+
+	span {
+		font-size: 0.7em;
+	
+	}
+}
+
+.price {
+	margin: 1.5em 0;
+	
+	font-size: 1.2em;
+
+	span {
+		padding-left: 0.15em;
+		font-size: 2.9em;
+	}
+}
+
+.variant {
+	overflow: auto;
+
+	
+
+	
+
+.buy--btn {
+	padding: 1.5em 3.1em;
+	border: none;
+	border-radius: 7px;
+	font-size: 0.8em;
+	font-weight: 700;
+	letter-spacing: 1.3px;
+	color: #fff;
+	background-color: color-highlight;
+	
+	cursor: pointer;
+
+	&:active {
+		transform: scale(0.97);
+	}
+}
+
+/* ----- Footer Section ----- */
+footer {
+	padding: 1em;
+	text-align: center;
+	color: #fff;
+
+
+	}
+}
+h3 {
+		margin-bottom: 1.1em;
+	}
+
+
+
+
+
+</style>
+<!-- home section starts  -->
+
+
+
+<!-- home section ends  -->
+
+<!-- category section starts  -->
+
+
+
+<!-- category section ends -->
+
+
+
+
+<!-- about section ends -->
+
+<!-- popular section starts  -->
+
+
+
+
+
+<!-- popular section ends -->
+
+<!-- banner section starts  -->
+
+<section class="banner">
+
+    <section class="product">
+        <div class="product__photo">
+            <div class="photo-container">
+                <div class="photo-main">
+                    
+                    <img src="/media/{{items.image}}">
+                </div>
+                
+            </div>
+        </div>
+        <div class="product__info">
+            <div class="title">
+                <h1>{{items.name}}</h1>
+                <span>{{items.category}}</span>
+            </div>
+            <div class="price">
+                 <span class="price">&#8358; {{items.price}}</span>
+            </div>
+            <div class="rating">
+                <span>Rating: </span>
+                <div class="stars">
+                    {{items.rate}}</i>
+                    
+                </div>
+            </div>
+            <div class="description">
+                <h3>BENEFITS</h3>
+                <ul>
+                    <li>Apples are nutricious</li>
+                    <li>Apples may be good for weight loss</li>
+                    <li>Apples may be good for bone health</li>
+                    <li>They're linked to a lowest risk of diabetes</li>
+                </ul>
+            </div>
+            <a href="/cart/add/{{items.id}}" class="btn">ADD TO CART</a>
+        </div>
+    </section>
+    
+   
+
+
+    
+<!-- order section ends -->
+
+<!-- blogs section starts  -->
+
+
+
+</section>
+
+<!-- blogs section ends -->
+
+<!-- footer section starts  -->
+
+{% endblock content %}

@@ -1,0 +1,95 @@
+
+{% include 'customer/header.html' %}
+{% block content %}
+<body>
+ <style>
+      td a {
+  width: 30px;
+  height: 30px;
+  font-size: 18px;
+}
+
+#counter {
+  display: inline-block;
+  width: 50px;
+  text-align: center;
+  font-size: 20px;
+}
+    </style>
+<!-- header section starts  -->
+
+
+
+<!-- shopping-cart section  -->
+
+<section class="shopping-cart-container">
+
+    <div class="products-container">
+
+        <h3 class="title">your products</h3>
+
+        <div class="box-container">
+            
+ 
+
+
+
+{% if cart_items_subtotals %}
+  <table>
+    <thead>
+      <tr>
+        <th><h1>Product Name</h1></th>
+        <th><h1>Quantity</h1></th>
+        <th><h1>Price</h1></th>
+        <th><h1>Subtotal</h1></th>
+        <th><h1>Actions</h1></th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item, subtotal in cart_items_subtotals %}
+        <tr>
+          <td>{{item.product.name }}</td>
+          <td>
+            <a href="/cart/decrement/{{item.id}}"><strong> - </strong></a><p id="counter">{{ item.quantity }}</p><a href="/cart/increment/{{item.id}}" ><strong> + </strong></a></td>
+          <td><span class="price">&#8358;{{ item.product.price }}</span></td>
+          <td><span class="price">&#8358;{{ subtotal }}</span></td>
+          <td>
+            <a href="/cart/clear/{{item.id}}" ><i class="fa-solid fa-trash"></i></a>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="4"></td>
+        <td><a href="/cart/clear">Clear Cart</a></td>
+      </tr>
+    </tfoot>
+  </table>
+{% else %}
+  <h1>cart details</h1>
+  <p>Your cart is empty.</p>
+{% endif %}
+
+        </div>
+    </div>
+
+    <div class="cart-total">
+
+        <h3 class="title"> cart total </h3>
+
+        <div class="box">
+            <h3 class="total"> total : <span>&#8358;{{total }}</span> </h3>
+          <h1></h1>
+            <a href="/cart/checkout/" class="btn">proceed to checkout</a>
+
+        </div>
+
+    </div>
+    <div>
+     
+  </div>
+</section>
+{% endblock %}
+</html>
+</body>

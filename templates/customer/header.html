@@ -1,0 +1,131 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Hut</title>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <script src="https://kit.fontawesome.com/e4bf377e92.js" crossorigin="anonymous"></script>
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="{%static 'css/style.css' %}">
+
+    <!-- Favicon -->
+    <link rel="icon" href="{%static '/image/favicon.png' %}">
+
+    <style>
+
+
+        
+        input{
+            margin: .7rem 0;
+            border-radius: .5rem;
+            background: #f7f7f7;
+            padding: 1rem 1.2rem;
+            font-size: 1.6rem;
+            color: #130f40;
+            text-transform: none;
+            width: 100%;
+        
+        }
+        
+        
+        </style>
+
+
+</head>
+<body>
+
+<!-- header section starts  -->
+
+<header class="header">
+
+    <a href="/home/" class="logo"> 
+    <i class="fas fa-utensils"></i> foodHut </a>
+
+    <nav class="navbar">
+        
+        <a href="/home/">home</a>
+        <a href="about/">about</a>
+        <a href="#popular">popular</a>
+        <a href="/menu/">menu</a>
+        <a href="#order">order</a>
+        <a href="#blogs">blogs</a>
+
+        {% if request.user.username %}
+        <h2 id="user" class="fa-solid fa-user"> {{request.user.username}}</h2> 
+        {%endif%}
+    </nav>
+
+   
+    
+    <div class="icons">
+        <div id="menu-btn" class="fas fa-bars"></div>
+        <div id="search-btn" class="fas fa-search"></div>
+
+        <a class="fas fa-shopping-cart" href="/cart/" ></a>
+        {%if request.user.username %}
+           <a href="/accounts/logout" class="fa-solid fa-user-slash"></a> 
+        {%else%}
+        <a href="/accounts/register" class="fa-solid fa-user-plus"></a>  
+        <a href="/accounts/login" class="fa-solid fa-user-check"></a> 
+        {%endif%}
+    </div>
+
+</header>
+
+
+
+
+
+
+<!-- header section ends  -->
+
+<!-- search-form  -->
+
+<section class="search-form-container">
+
+    <form action="">
+        <input type="search" name="" placeholder="search here..." id="search-box">
+        <label for="search-box" class="fas fa-search"></label>
+    </form>
+
+</section>
+
+
+
+
+
+<!-- home section ends  -->
+
+<!-- category section starts  -->
+
+
+
+<!-- category section ends -->
+{% block content %}
+
+{%endblock content%}
+<!-- about section starts  -->
+
+
+
+<!-- blogs section ends -->
+
+<!-- footer section starts  -->
+
+
+<!-- footer section ends -->
+
+
+<!-- custom js file link  -->
+<script src="{%static 'js/script.js' %}"></script>
+
+
+
+</body>
+</html>
