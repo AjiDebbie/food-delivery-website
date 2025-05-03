@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-0z4q$gy*_=!ooe&p-!lvz!no4$4gwozc0l@46oap23rrudj31q
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [food-delivery-website-3pwh.onrender.com]
+ALLOWED_HOSTS = [food-delivery-website.onrender.com]
 
 
 # Application definition
